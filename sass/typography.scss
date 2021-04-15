@@ -1,12 +1,44 @@
-.main-heading {
-  position: absolute;
-  top: 2rem;
-  left: 0;
-  z-index: 5;
+h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
 
+.main-heading {
   width: 100%;
 
+  margin-bottom: 1.5rem;
+
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #ffffff;
+}
+
+.sub-heading {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 1rem;
+
+  text-align: center;
+  font-size: 2rem;
+
+  &--white {
+    color: #ffffff;
+  }
+
+  &::after {
+    content: "----------";
+
+    position: absolute;
+    top: 1.75rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: var(--color-tangerine);
+  }
+}
+
+.span-text {
+  font-size: 1.5rem;
 }

@@ -17,6 +17,7 @@
   --color-light: #f9cf00;
   --color-tangerine: #f19f40;
   --color-near-black: #0e1318;
+  --color-off-white: #faf9f6;
 }
 
 // Reset
@@ -47,12 +48,9 @@ a:active {
   color: inherit;
 }
 
-button,
-button:active,
-button:hover {
+button {
   border: none;
   outline: none;
   font: inherit;
-  color: inherit;
   background: none;
 }
