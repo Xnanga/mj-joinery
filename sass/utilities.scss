@@ -3,3 +3,8 @@
   top: 0;
   left: 0;
 }
+
+@mixin height-width-100 {
+  height: 100%;
+  width: 100%;
+}

@@ -43,40 +43,31 @@ button {
   height: 6rem;
   padding: 1rem 2rem;
   background-color: var(--color-cerulean);
-  border-bottom: 1px solid #ffffff; }
+  border-top: 5px solid var(--color-near-black); }
 
 .hero-slider {
   position: relative;
   width: 100%;
   height: calc(100vh - 6rem);
   overflow: hidden; }
-  .hero-slider::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  .hero-slider__overlay {
     height: 100%;
     width: 100%;
-    background-color: #000000;
-    opacity: 0.4; }
-  .hero-slider__overlay {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding: 1.5rem;
-    height: 100%;
-    width: 100%; }
+    padding: 1.5rem; }
   .hero-slider__img {
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
     opacity: 0;
     object-fit: cover;
     transition: all 3s ease-in-out; }
@@ -90,26 +81,28 @@ button {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  margin: 2.5rem 0;
   width: 100%;
   height: calc(100% - 12.5rem); }
   .services-grid__block {
+    height: 100%;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
+    border-radius: 5px;
     perspective: 700px; }
 
 .services-widget {
+  height: 100%;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-  border-radius: 3px;
-  box-shadow: 5px 5px 4px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 2px -2px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
   backface-visibility: hidden;
   transition: all 0.8s ease-in; }
   .services-widget__title {
@@ -120,35 +113,37 @@ button {
     transform: translate(-50%, -50%);
     text-align: center; }
   .services-widget__img {
-    position: relative;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    position: relative;
+    border-radius: 5px; }
   .services-widget::after {
     content: "";
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 5;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(circle, black 0%, rgba(0, 212, 255, 0) 100%);
-    opacity: 1; }
+    background-color: #000000;
+    opacity: 0.3;
+    border-radius: 5px; }
   .services-widget:hover {
     transform: rotateY(180deg); }
   .services-widget:hover ~ .services-widget-backside {
     transform: rotateY(0deg); }
 
 .services-widget-backside {
+  height: 100%;
+  width: 100%;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
   background: linear-gradient(45deg, #f08100 0%, #f19f40 100%);
-  border-radius: 3px;
   padding: 1rem;
-  box-shadow: 5px 5px 4px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 2px -2px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
   backface-visibility: hidden;
   transform: rotateY(-180deg);
   transition: all 0.8s ease-in; }
@@ -157,7 +152,54 @@ button {
     font-size: 1.5rem;
     color: #ffffff; }
 
-.btn {
+.review-widget {
+  max-height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 1rem;
+  margin: 2.5rem 0;
+  padding: 0.5rem;
+  overflow-y: scroll; }
+
+.review-card {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: repeat(2, auto);
+  padding: 1rem 0.5rem;
+  border-radius: 5px;
+  background-color: var(--color-off-white);
+  box-shadow: 3px 3px 2px -2px rgba(0, 0, 0, 0.75); }
+  .review-card__bio {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    .review-card__bio__img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%; }
+    .review-card__bio__name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 0.75rem; }
+  .review-card__rating {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: center; }
+  .review-card__rating-star {
+    height: 1.5rem;
+    width: 1.5rem; }
+  .review-card__text {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-weight: 200; }
+
+.btn-blue {
   border: 1px solid #3477c5;
   border-radius: 5px;
   font-size: 2.5rem;
@@ -167,17 +209,36 @@ button {
   background-color: var(--color-cerulean);
   box-shadow: 10px 10px 30px -9px rgba(0, 0, 0, 0.75);
   transition: all 0.2s; }
-  .btn:hover {
+  .btn-blue:hover {
     transform: scale(1.1);
     box-shadow: 8px 8px 25px -9px rgba(0, 0, 0, 0.75); }
-  .btn:active {
+  .btn-blue:active {
     transform: scale(1.05);
     box-shadow: 7px 7px 22px -9px rgba(0, 0, 0, 0.75); }
 
+.btn-white {
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 1rem;
+  color: var(--color-cerulean);
+  background-color: #ffffffff;
+  box-shadow: 10px 10px 30px -9px rgba(0, 0, 0, 0.75);
+  transition: all 0.2s; }
+  .btn-white:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 25px -9px rgba(0, 0, 0, 0.75); }
+  .btn-white:active {
+    transform: scale(1.05);
+    box-shadow: 7px 7px 22px -9px rgba(0, 0, 0, 0.75); }
+
+.btn-body {
+  font-size: 1.5rem; }
+
 .section {
-  height: 100vh;
-  padding: 1rem 1rem;
-  overflow: hidden; }
+  max-height: 100vh;
+  padding: 1rem 1rem; }
 
 .flex-section {
   display: flex;
@@ -206,16 +267,27 @@ h3 {
   color: #ffffff; }
 
 .main-heading {
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  padding: 1.5rem 0;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ffffff; }
+  .main-heading::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    opacity: 0.3; }
 
 .sub-heading {
   position: relative;
   width: 100%;
-  margin-bottom: 1rem;
   text-align: center;
   font-size: 2rem; }
   .sub-heading--white {

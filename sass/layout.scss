@@ -1,9 +1,7 @@
 .section {
-  height: 100vh;
+  max-height: 100vh;
 
   padding: 1rem 1rem;
-
-  overflow: hidden;
 }
 
 .flex-section {
