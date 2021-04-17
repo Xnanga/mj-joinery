@@ -199,6 +199,21 @@ button {
     grid-row: 2 / 3;
     font-weight: 200; }
 
+.gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 1px;
+  width: 100%;
+  max-height: 100%;
+  margin: 2.5rem 0;
+  padding: 1px;
+  background-color: var(--color-aluminium); }
+  .gallery__photo {
+    width: 100%;
+    object-fit: cover; }
+
 .btn-blue {
   border: 1px solid #3477c5;
   border-radius: 5px;
@@ -237,7 +252,6 @@ button {
   font-size: 1.5rem; }
 
 .section {
-  max-height: 100vh;
   padding: 1rem 1rem; }
 
 .flex-section {
@@ -261,6 +275,17 @@ button {
   height: 5rem;
   width: 100%;
   background: linear-gradient(to right top, #faf9f6 49%, #4484ce 50%); }
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Montserrat", sans-serif; }
 
 h3 {
   font-size: 1.5rem;
@@ -289,16 +314,24 @@ h3 {
   position: relative;
   width: 100%;
   text-align: center;
-  font-size: 2rem; }
+  font-size: 1.75rem; }
   .sub-heading--white {
     color: #ffffff; }
   .sub-heading::after {
-    content: "----------";
+    content: "-------- M&J --------";
     position: absolute;
-    top: 1.75rem;
+    top: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 1rem;
     color: var(--color-tangerine); }
 
 .span-text {
   font-size: 1.5rem; }
+
+.text-blurb {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 2.5rem 0;
+  padding: 1rem; }

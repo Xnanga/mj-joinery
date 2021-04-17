@@ -241,6 +241,28 @@
   }
 }
 
+.gallery {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 1px;
+
+  width: 100%;
+  max-height: 100%;
+
+  margin: 2.5rem 0;
+  padding: 1px;
+
+  background-color: var(--color-aluminium);
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 // Buttons
 
 .btn-blue {
